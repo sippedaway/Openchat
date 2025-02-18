@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>OpenChat</title>
+    <link rel="icon" href="favicon.png">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="left-panel">
+            <div class="lp-header">
+                <div class="lp-header-left">
+                    <p>Welcome to OpenChat – a global chat room with no authentication and no rules.</p>
+                </div>
+                <h1 class="vertical-header">OpenChat</h1>
+            </div>
+            <div class="lp-rest">
+                <h3>What's up?</h3>
+                <p>OpenChat is a completely open-source chat room to send any message to anyone</p>
+                <h3>Are there accounts?</h3>
+                <p>Nope. Everyone is Anonymous #ID unless you put in an username. Technically you can 'impersonate' others.</p>
+                <h3>Username</h3>
+                <p>Don't wanna be Anonymous #ID? Enter your username below:</p>
+                <input type="text" id="usernameInput" placeholder="Enter your username">
+                <button id="optionsButton" class="button" style="margin-top: 40px;">Options</button>
+            </div>
+        </div>
+        <div class="right-panel">
+            <div id="chatBox" class="chat-box"></div>
+            <form id="messageForm">
+                <input type="text" id="messageInput" placeholder="Type your message..." autocomplete="off" required>
+                <button type="submit" class="button">Send</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="warningPopup" class="popup">
+        <div class="popup-content">
+            <span class="close-button" onclick="closePopup()">&times;</span>
+            <h2>Warning</h2>
+            <p>This is a global live chat. Everything you send will be seen by anyone that stumbles upon this website.<br><b>You cannot delete messages.</b> Proceed only if you agree.</p>
+
+            <h4>Got questions?</h4>
+            <p>Feel free to contact me at <b><a href="mailto:hello@sipped.org">hello@sipped.org</a></b> or send a message here, I'll probably reply :)</p>
+        </div>
+    </div>
+
+    <div id="optionsModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <div class="modal-inner">
+                <div class="modal-tabs">
+                    <ul>
+                        <li data-tab="theme" class="active">Theme</li>
+                        <li data-tab="message">Message</li>
+                    </ul>
+                </div>
+                <div class="modal-tab-content">
+                    <div id="themeTab" class="tab-content active">
+                        <h3>Default Themes</h3>
+                        <div class="theme-buttons">
+                            <button class="button theme-btn" data-text="#000000" data-bg="#ffffff">Light</button>
+                            <button class="button theme-btn" data-text="#ffffff" data-bg="#3a3a3a">Gray</button>
+                            <button class="button theme-btn" data-text="#ffffff" data-bg="#1e1e1e">More gray</button>
+                            <button class="button theme-btn" data-text="#ffffff" data-bg="#000000">Not gray anymore</button>
+                            <button class="button theme-btn" data-text="#e0e0e0" data-bg="#2c3e50">Midnight</button>
+                            <button class="button theme-btn" data-text="#000000" data-bg="#f5deb3">Sand</button>
+                            <button class="button theme-btn" data-text="#f8f8f8" data-bg="#556b2f">Idk looks green</button>
+                        </div>
+                        <h3 style="margin-top: 8%;">Custom Theme</h3>
+                        <label for="customTextColor" style="margin-right: 5px;">Text Color:</label>
+                        <input type="color" id="customTextColor" value="#000000">
+                        <br>
+                        <label for="customBgColor" style="margin-right: 5px;">Background Color:</label>
+                        <input type="color" id="customBgColor" value="#ffffff">
+                        <br>
+                        <button class="button" style="margin-top: 20px;" id="applyCustomTheme">Apply Custom Theme</button>
+                    </div>
+                    <div id="messageTab" class="tab-content">
+                        <h3>Message Format</h3>
+                        <div class="theme-buttons" id="messageFormatSelect">
+                            <button class="button format-btn" style="margin-right: 15px;" data-value="standard">Standard</option>
+                                <button class="button format-btn" style="margin-right: 15px;" data-value="compact">Compact</option>
+                        </div>
+                        <h3 style="margin-top: 8%">Font Size</h3>
+                        <label for="fontSizeInput" style="margin-right: 5px;">Font Size:</label>
+                        <input type="range" id="fontSizeInput" min="12" max="24" value="16">
+                        <span id="fontSizeValue">16px</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
