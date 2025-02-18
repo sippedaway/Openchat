@@ -1,4 +1,4 @@
-const socket = io('wss://openchat-47l5.onrender.com');
+const socket = io('wss://chat.sipped.org');
 
 let currentMessageFormat = "standard";
 let chatMessages = [];
