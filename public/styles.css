@@ -400,3 +400,15 @@ html {
         padding: 15px;
     }
 }
+
+.lpr-buttons {
+    display: flex;
+}
+
+.kofi-b {
+    background-color: #FF6433;
+}
+
+.kofi-b:hover {
+    background-color: #d44f26;
+}
