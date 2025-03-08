@@ -10,10 +10,11 @@
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/K3K31AMKAQ)
 
-# [Openchat](https://chat.sipped.org/)
+# Openchat
 **Openchat** is a completely open-source website with one chat room that anyone can talk in. No rules. No accounts. Completely anonymous, unless you change your username. Wanna impersonate someone? Sure. Wanna cuss at someone? Sure.
 
-[<kbd> <br> chat.sipped.org <br> </kbd>](https://chat.sipped.org)
+# STATUS
+Currently down - hosting service issues. Feel free to look at the source code for now
 
 ## Well isn't that a bad idea?
 **Probably is.** That's the fun. Anarchyyyy
